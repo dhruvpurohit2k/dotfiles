@@ -1,0 +1,122 @@
+live_config_reload = true
+[env]
+TERM = "xterm-256color"
+# "cursor.style" = "Block"
+# "debug.render_timer" = false
+# theme = "Catppuccin"
+# "window.opacity" = 5.0
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+# Colors (Nord)
+
+# Alacritty's default color scheme pre-0.13 (based on tomorrow_night)
+# https://github.com/alacritty/alacritty/blob/v0.12.3/alacritty/src/config/color.rs
+
+[colors.primary]
+foreground = "#c5c8c6"
+background = "#1d1f21"
+
+[colors.normal]
+black = "#1d1f21"
+red = "#cc6666"
+green = "#b5bd68"
+yellow = "#f0c674"
+blue = "#81a2be"
+magenta = "#b294bb"
+cyan = "#8abeb7"
+white = "#c5c8c6"
+
+[colors.bright]
+black = "#666666"
+red = "#d54e53"
+green = "#b9ca4a"
+yellow = "#e7c547"
+blue = "#7aa6da"
+magenta = "#c397d8"
+cyan = "#70c0b1"
+white = "#eaeaea"
+
+[colors.dim]
+black = "#131415"
+red = "#864343"
+green = "#777c44"
+yellow = "#9e824c"
+blue = "#556a7d"
+magenta = "#75617b"
+cyan = "#5b7d78"
+white = "#828482"
+
+[colors.hints]
+start = { foreground = "#1d1f21", background = "#e9ff5e" }
+end = { foreground = "#e9ff5e", background = "#1d1f21" }
+
+[colors.search]
+matches = { foreground = "#000000", background = "#ffffff" }
+focused_match = { foreground = "#ffffff", background = "#000000" }
+[[colors.indexed_colors]]
+index = 16
+color = '#d18616'
+
+[[colors.indexed_colors]]
+index = 17
+color = '#f97583'
+
+[font]
+size = 14
+
+[font.bold]
+family = "JetBrainsMono Nerd font"
+style = "Bold"
+
+[font.glyph_offset]
+x = 0
+y = 0
+
+[font.italic]
+family = "JetBrainsMono Nerd Font"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[mouse]
+# faux_scrolling_lines = 1
+hide_when_typing = true
+
+[[mouse.bindings]]
+action = "PasteSelection"
+mouse = "Middle"
+
+# [mouse.double_click]
+# threshold = 300
+
+# [mouse.triple_click]
+# threshold = 300
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+
+[shell]
+program = "/bin/zsh"
+
+[window]
+# decorations = full"
+dynamic_title = true
+# option_as_alt = "Both"
+# startup_mode = "Maximized"
+opacity = 0.90
+# opacity = 1
+
+[window.dimensions]
+columns = 160
+lines = 40
+
+[window.padding]
+x = 5
+y = 5
