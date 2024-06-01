@@ -18,6 +18,7 @@ return {
   			"html-lsp", "css-lsp" , "prettier",
         "google-java-format",
         "jdtls",
+        "ktlint","kotlin-language-server",
       }
     }
   },

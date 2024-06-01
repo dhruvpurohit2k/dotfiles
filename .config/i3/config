@@ -188,12 +188,13 @@ bindsym $mod+r mode "resize"
 # Color shemes for windows 
 # set $bgcolor    #00000080
 # set $in-bgcolor #9e9ea633
- set $bgcolor   #00000055
-set $in-bgcolor #9e9ea655
-set $text       #d2d3d6
-set $u-bgcolor  #ff0000
+ set $bgcolor   #1d1f21cc
+set $in-bgcolor #c5c8c655
+set $text       #d2d3d6cc
+set $u-bgcolor  #ff0000cc
 set $indicator  #affaa0
-set $in-text    #969696
+# set $in-text    #969696
+set $in-text    #000
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
 client.focused          $bgcolor        $bgcolor        $text           $indicator
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
@@ -209,7 +210,7 @@ bar {
         # tray_output none
         colors {
                 # background $bgcolor
-                background #00000088
+                background #1d1f21cc
                 # background #2c2c2c
 
                 separator #000
@@ -221,6 +222,7 @@ bar {
 
         }
 }
+# exec_always --no-startup-id polybar
 exec --no-startup-id /usr/libexec/gsd-xsettings
 #Setting up wallpaper
 exec_always feh --bg-fill /home/dhruv/Pictures/leaves.jpg
@@ -237,6 +239,4 @@ bindsym Ctrl+Print exec maim -s -u | xclip -selection clipboard -t image/png -i
 gaps inner 7
 gaps outer 7
 exec_always ibus-daemon -rxRd
-# exec_always "setxkbmap -model pc104 -layout us,jp -variant ,, -option grp:win_space_toggle"
-# exec_always "setxkbmap -model pc104 -layout us,ru -variant ,, -option grp:super_space_toggle"
-# exec_always "setxkbmap -layout us,jp -option grp: alt_space_toggle"
+exec_always export XDG_CURRENT_DESKTOP=GNOME

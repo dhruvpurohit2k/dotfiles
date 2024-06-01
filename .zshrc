@@ -14,6 +14,7 @@ if [ ! -d "$ZINIT_HOME" ]; then
    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 fi
 
+export XDG_CURRENT_DESKTOP=GNOME
 # Source/Load zinit
 source "${ZINIT_HOME}/zinit.zsh"
 
@@ -84,5 +85,7 @@ eval "$(zoxide init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export PATH="$HOME/jdk-22.0.1/bin/:/usr/local/android-studio/bin/:$PATH"
-export XDG_CURRENT_DESKTOP=GNOME
-export GTK_THEME=Graphite-teal-Dark-nord
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

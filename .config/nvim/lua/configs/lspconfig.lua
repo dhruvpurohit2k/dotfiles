@@ -4,7 +4,7 @@ local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
 
 local lspconfig = require "lspconfig"
-local servers = { "html", "cssls","tsserver" ,}
+local servers = { "html", "cssls","tsserver"}
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
@@ -28,6 +28,10 @@ lspconfig.clangd.setup{
     on_attach(client,bufnr)
   end,
   capabilities = capabilities,
+}
+require'lspconfig'.kotlin_language_server.setup{
+    on_attach = on_attach,
+    capabilities = capabilities,
 }
 -- lspconfig.jdtls.setup{
 --   on_attach=on_attach,
