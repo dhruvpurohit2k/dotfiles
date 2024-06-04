@@ -188,36 +188,37 @@ bindsym $mod+r mode "resize"
 # Color shemes for windows 
 # set $bgcolor    #00000080
 # set $in-bgcolor #9e9ea633
- set $bgcolor   #1d1f21cc
-set $in-bgcolor #c5c8c655
-set $text       #d2d3d6cc
-set $u-bgcolor  #ff0000cc
+set $bgcolor    #1E1E2E
+set $in-bgcolor #313244
+set $text       #d2d3d6
+set $u-bgcolor  #ee99a0
 set $indicator  #affaa0
-# set $in-text    #969696
-set $in-text    #000
+set $in-text    #969696
+set $border     #CDD6F4
 #                       border          background      text            indicator (a line which shows where the next window will be placed)     
-client.focused          $bgcolor        $bgcolor        $text           $indicator
+client.focused          $bgcolor        $bgcolor        $text           $indicator    $border 
 client.unfocused        $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.focused_inactive $in-bgcolor     $in-bgcolor     $in-text        $in-bgcolor
 client.urgent           $u-bgcolor      $u-bgcolor      $text           $u-bgcolor
-
 
 bar {
         # position top
         status_command SCRIPT_DIR=/home/dhruv/.config/i3blocks/config i3blocks 
         i3bar_command i3bar --transparency
-        font pango: JetBrainsMonoNL Regular 12
+        # font pango: MartianMono NF Bold 13
+        font pango: JetBrainsMono NF Bold 14
+        separator_symbol "❚"
         # tray_output none
         colors {
-                # background $bgcolor
-                background #1d1f21cc
-                # background #2c2c2c
-
-                separator #000
+                background #24273A
                 
                 #                       border          background      text
-                focused_workspace       $bgcolor        $bgcolor        $text
-                inactive_workspace      $in-bgcolor     $in-bgcolor     $text
+                # focused_workspace       $bgcolor        $bgcolor        $text
+                # inactive_workspace      $in-bgcolor     $in-bgcolor     $text
+                # urgent_workspace        $u-bgcolor      $u-bgcolor      $text   
+                                        # border          background      text
+                focused_workspace       $u-bgcolor        #24273A        $u-bgcolor
+                inactive_workspace      #24273A     #24273A    $indicator 
                 urgent_workspace        $u-bgcolor      $u-bgcolor      $text   
 
         }
@@ -225,7 +226,7 @@ bar {
 # exec_always --no-startup-id polybar
 exec --no-startup-id /usr/libexec/gsd-xsettings
 #Setting up wallpaper
-exec_always feh --bg-fill /home/dhruv/Pictures/leaves.jpg
+exec_always feh --bg-fill /home/dhruv/Pictures/abstract2.jpg
 # exec_always feh --bg-fill /home/dhruv/Pictures/Black_Wallpaper.jpg
 #Executing picom compositor
 exec_always picom -f
@@ -240,3 +241,7 @@ gaps inner 7
 gaps outer 7
 exec_always ibus-daemon -rxRd
 exec_always export XDG_CURRENT_DESKTOP=GNOME
+default_border pixel 2
+
+ 
+

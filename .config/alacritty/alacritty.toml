@@ -13,55 +13,85 @@ duration = 0
 
 # Alacritty's default color scheme pre-0.13 (based on tomorrow_night)
 # https://github.com/alacritty/alacritty/blob/v0.12.3/alacritty/src/config/color.rs
+# Colors (One Dark)
 
+# Default colors
 [colors.primary]
-foreground = "#c5c8c6"
-background = "#1d1f21"
+background = '#24273A' # base
+foreground = '#CAD3F5' # text
+# Bright and dim foreground colors
+dim_foreground = '#CAD3F5' # text
+bright_foreground = '#CAD3F5' # text
 
+# Cursor colors
+[colors.cursor]
+text = '#24273A' # base
+cursor = '#F4DBD6' # rosewater
+
+[colors.vi_mode_cursor]
+text = '#24273A' # base
+cursor = '#B7BDF8' # lavender
+
+# Search colors
+[colors.search.matches]
+foreground = '#24273A' # base
+background = '#A5ADCB' # subtext0
+
+[colors.search.focused_match]
+foreground = '#24273A' # base
+background = '#A6DA95' # green
+
+[colors.footer_bar]
+foreground = '#24273A' # base
+background = '#A5ADCB' # subtext0
+
+# Keyboard regex hints
+[colors.hints.start]
+foreground = '#24273A' # base
+background = '#EED49F' # yellow
+
+[colors.hints.end]
+foreground = '#24273A' # base
+background = '#A5ADCB' # subtext0
+
+# Selection colors
+[colors.selection]
+text = '#24273A' # base
+background = '#F4DBD6' # rosewater
+
+# Normal colors
 [colors.normal]
-black = "#1d1f21"
-red = "#cc6666"
-green = "#b5bd68"
-yellow = "#f0c674"
-blue = "#81a2be"
-magenta = "#b294bb"
-cyan = "#8abeb7"
-white = "#c5c8c6"
+black = '#494D64' # surface1
+red = '#ED8796' # red
+green = '#A6DA95' # green
+yellow = '#EED49F' # yellow
+blue = '#8AADF4' # blue
+magenta = '#F5BDE6' # pink
+cyan = '#8BD5CA' # teal
+white = '#B8C0E0' # subtext1
 
+# Bright colors
 [colors.bright]
-black = "#666666"
-red = "#d54e53"
-green = "#b9ca4a"
-yellow = "#e7c547"
-blue = "#7aa6da"
-magenta = "#c397d8"
-cyan = "#70c0b1"
-white = "#eaeaea"
+black = '#5B6078' # surface2
+red = '#ED8796' # red
+green = '#A6DA95' # green
+yellow = '#EED49F' # yellow
+blue = '#8AADF4' # blue
+magenta = '#F5BDE6' # pink
+cyan = '#8BD5CA' # teal
+white = '#A5ADCB' # subtext0
 
+# Dim colors
 [colors.dim]
-black = "#131415"
-red = "#864343"
-green = "#777c44"
-yellow = "#9e824c"
-blue = "#556a7d"
-magenta = "#75617b"
-cyan = "#5b7d78"
-white = "#828482"
+black = '#494D64' # surface1
+red = '#ED8796' # red
+green = '#A6DA95' # green
+yellow = '#EED49F' # yellow
+blue = '#8AADF4' # blue
+magenta = '#F5BDE6' # pink
+cyan = '#8BD5CA' # teal
+white = '#B8C0E0' # subtext1
 
-[colors.hints]
-start = { foreground = "#1d1f21", background = "#e9ff5e" }
-end = { foreground = "#e9ff5e", background = "#1d1f21" }
-
-[colors.search]
-matches = { foreground = "#000000", background = "#ffffff" }
-focused_match = { foreground = "#ffffff", background = "#000000" }
-[[colors.indexed_colors]]
-index = 16
-color = '#d18616'
-
-[[colors.indexed_colors]]
-index = 17
-color = '#f97583'
 
 [font]
 size = 14
@@ -110,8 +140,8 @@ program = "/bin/zsh"
 dynamic_title = true
 # option_as_alt = "Both"
 # startup_mode = "Maximized"
-opacity = 0.80
-# opacity = 1
+# opacity = 0.95
+opacity = 1
 
 [window.dimensions]
 columns = 160
