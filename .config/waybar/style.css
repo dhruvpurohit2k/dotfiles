@@ -15,15 +15,15 @@ window#waybar {
 	border-radius : 5px;
 	background-color: alpha(@barbackground,0);
 }
-#clock.1,#clock.2,#custom-clockSep{
+#clock.1,#clock.2,#custom-sep{
 	background-color : @traybackground;
-	padding-left:5px;
-	padding-right:5px;
+	padding-left:10px;
+	padding-right:10px;
 }
-#pulseaudio.output,#pulseaudio.input,#memory,#cpu,#tray,#custom-rofi-powermenus{
+#network,#pulseaudio.output,#pulseaudio.input,#memory,#cpu,#tray,#custom-rofi-powermenus{
 	background-color : @traybackground;
-	padding-left:5px;
-	padding-right:5px;
+	padding-left:10px;
+	padding-right:10px;
 }
 #workspaces {
 	background-color: @traybackground;
