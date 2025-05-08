@@ -1,0 +1,70 @@
+@define-color text #eeeeee;
+@define-color traybackground #333333;
+@define-color barbackground #121212;
+@define-color tray-icon-active #a6e3a1;
+@define-color tray-icon-inactive #f38ba8;
+
+* {
+	font-family: JetBrainsMono Nerd Font;
+	font-size: 20px;
+	margin: 0;
+}
+
+window#waybar {
+	color: @text;
+	border-radius : 5px;
+	background-color: alpha(@barbackground,0);
+}
+#clock.1,#clock.2,#custom-clockSep{
+	background-color : @traybackground;
+	padding-left:5px;
+	padding-right:5px;
+}
+#pulseaudio.output,#pulseaudio.input,#memory,#cpu,#tray,#custom-rofi-powermenus{
+	background-color : @traybackground;
+	padding-left:5px;
+	padding-right:5px;
+}
+#workspaces {
+	background-color: @traybackground;
+}
+#workspaces button{
+	color : @tray-icon-inactive;
+	padding-left : 0.5em;
+	padding-right : 0.5em;
+	border : 0px solid;
+
+}
+#workspaces button.focused {
+	border : @traybackground;
+}
+#workspaces button.active{
+	color : @tray-icon-active;
+}
+#workspaces button:hover{
+	box-shadow : inherit;
+	text-shadow : inherit;
+}
+#workspaces button:hover{
+	background : none;
+}
+#custom-roundleft{
+	background-color: alpha(@barbackground,0);
+	font-size: 26px;
+	color : @traybackground;
+}
+#custom-roundright{
+	background-color: alpha(@barbackground,0);
+	font-size: 26px;
+	color : @traybackground;
+}
+#spacing-left{
+	padding-left : 1em;
+}
+
+#spacing-right{
+	padding-right : 1em;
+}
+#custom-rofi-powermenus{
+	color : @tray-icon-inactive;
+}
