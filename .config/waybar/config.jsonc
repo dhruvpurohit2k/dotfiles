@@ -69,17 +69,17 @@
 	},
 	"pulseaudio#output":{
 		"on-click" : "pavucontrol",
-		"format": "{icon} {volume:2}%",
+		"format": "{icon} {volume:>3}%",
 		"format-muted" : "",
 		"format-icons": {
 			"headphones": "",
 			"default": [
-				"",
 				"",
 				""
 			]
 		},
 		"scroll-step" : 5,
+		"on-click-right" : "./toggle-audio-sink.sh",
 	},
 	"pulseaudio#input":{
 		"disable-scroll" : true,
@@ -87,6 +87,7 @@
 		"format-source-muted" : " ",
 		"format" : "{format_source}",
 		"on-click" : "pactl set-source-mute 62 toggle",
+		"tooltip-format" : "{desc} - {volume}%",
 	},
 	"custom/rofi-powermenus" :{
 		"format" : " ",
@@ -94,11 +95,11 @@
 	},
 	"memory": {
 		"interval": 5,
-		"format": "\uefc5 {}%"
+		"format": "\uefc5 {:>2}%"
 	},
 	"cpu": {
 		"interval": 5,
-		"format": "\uf4bc {usage:2}%"
+		"format": "\uf4bc {usage:>2}%"
 	},
 	"custom/roundright" : {
 		"format" : "",
@@ -108,7 +109,7 @@
 	},
     "network": {
         "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "\uf6ff{bandwidthDownBytes}",
+        "format-ethernet": "\uf6ff{bandwidthDownBytes:>6}",
         "format-disconnected" : "\uf701",
         "interval": 5,
         "tooltip": false,
