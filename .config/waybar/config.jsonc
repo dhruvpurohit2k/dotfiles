@@ -79,7 +79,7 @@
 			]
 		},
 		"scroll-step" : 5,
-		"on-click-right" : "./toggle-audio-sink.sh",
+		"on-click-right" : "~/dotfiles/.config/waybar/toggle-audio-sink.sh",
 	},
 	"pulseaudio#input":{
 		"disable-scroll" : true,
