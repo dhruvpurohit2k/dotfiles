@@ -80,6 +80,8 @@
 		},
 		"scroll-step" : 5,
 		"on-click-right" : "~/dotfiles/.config/waybar/toggle-audio-sink.sh",
+		"tooltip" : true,
+		"tooptip-format" : "{sink_name}"
 	},
 	"pulseaudio#input":{
 		"disable-scroll" : true,
