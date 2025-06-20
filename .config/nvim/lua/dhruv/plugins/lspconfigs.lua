@@ -255,6 +255,7 @@ return {
 				"clang-format",
 				"mypy",
 				"black",
+				"prettier",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 

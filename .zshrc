@@ -84,7 +84,7 @@ eval "$(zoxide init zsh)"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="$HOME/jdk-22.0.1/bin/:/usr/local/android-studio/bin/:/usr/share/applications/:/usr/local/share/applications/:/home/dhruv/.local/bin/:/home/dhruv/.local/bin/:$PATH"
+export PATH="$HOME/my-scripts/:$HOME/jdk-22.0.1/bin/:/usr/local/android-studio/bin/:/usr/share/applications/:/usr/local/share/applications/:/home/dhruv/.local/bin/:/home/dhruv/.local/bin/:$PATH"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
