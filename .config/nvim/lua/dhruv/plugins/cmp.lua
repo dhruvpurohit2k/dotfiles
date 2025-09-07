@@ -6,6 +6,7 @@ return { -- Autocompletion
 		-- Snippet Engine
 		{
 			"L3MON4D3/LuaSnip",
+			"mlaursen/vim-react-snippets",
 			version = "2.*",
 			build = (function()
 				-- Build Step is needed for regex support in snippets.

@@ -5,8 +5,7 @@ local on_attach = function(_, bufnr)
 	vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { desc = "[r]ename token" })
 	local buf_set_keymap = vim.api.nvim_buf_set_keymap
 	-- local opts = { noremap = true, silent = true }
-	local opts = {}
-	buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+	local opts = {}, buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 	buf_set_keymap(bufnr, "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
 	buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
@@ -19,10 +18,9 @@ end
 
 local lspconfig = require("lspconfig")
 local capabilities = require("blink.cmp").get_lsp_capabilities()
-capabilities.offsetEncoding = "utf-16"
+capabilities.offsetEncoding = { "utf-16" }
 lspconfig.pyright.setup({ capabilities = capabilities, on_attach = on_attach })
 lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
 lspconfig.clangd.setup({
 	on_attach = function(client, bufnr)
 		local buf_set_keymap = vim.api.nvim_buf_set_keymap
@@ -84,6 +82,7 @@ lspconfig.jdtls.setup({
 		buf_set_keymap(bufnr, "n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
 	end,
 })
+
 vim.api.nvim_create_autocmd("BufReadCmd", {
 	pattern = "jdt://*",
 	callback = function(args)

@@ -5,66 +5,86 @@
 @define-color tray-icon-inactive #f38ba8;
 
 * {
-	font-family: JetBrainsMono Nerd Font;
-	font-size: 20px;
-	margin: 0;
+  font-family: JetBrainsMono Nerd Font;
+  font-size: 20px;
+  margin: 0;
 }
 
 window#waybar {
-	color: @text;
-	border-radius : 5px;
-	background-color: alpha(@barbackground,0);
+  color: @text;
+  border-radius: 5px;
+  background-color: alpha(@barbackground, 0);
 }
-#clock.1,#clock.2,#custom-sep{
-	background-color : @traybackground;
-	padding-left:10px;
-	padding-right:10px;
+
+#clock.1,
+#clock.2,
+#custom-sep {
+  background-color: @traybackground;
+  padding-left: 10px;
+  padding-right: 10px;
 }
-#network,#pulseaudio.output,#pulseaudio.input,#memory,#cpu,#tray,#custom-rofi-powermenus{
-	background-color : @traybackground;
-	padding-left:10px;
-	padding-right:10px;
+
+#network,
+#pulseaudio.output,
+#pulseaudio.input,
+#memory,
+#cpu,
+#tray,
+#custom-change-input,
+#custom-rofi-powermenus {
+  background-color: @traybackground;
+  padding-left: 10px;
+  padding-right: 10px;
 }
+
 #workspaces {
-	background-color: @traybackground;
+  background-color: @traybackground;
 }
-#workspaces button{
-	color : @tray-icon-inactive;
-	padding-left : 0.5em;
-	padding-right : 0.5em;
-	border : 0px solid;
 
+#workspaces button {
+  color: @tray-icon-inactive;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+  border: 0px solid;
 }
+
 #workspaces button.focused {
-	border : @traybackground;
-}
-#workspaces button.active{
-	color : @tray-icon-active;
-}
-#workspaces button:hover{
-	box-shadow : inherit;
-	text-shadow : inherit;
-}
-#workspaces button:hover{
-	background : none;
-}
-#custom-roundleft{
-	background-color: alpha(@barbackground,0);
-	font-size: 26px;
-	color : @traybackground;
-}
-#custom-roundright{
-	background-color: alpha(@barbackground,0);
-	font-size: 26px;
-	color : @traybackground;
-}
-#spacing-left{
-	padding-left : 1em;
+  border: @traybackground;
 }
 
-#spacing-right{
-	padding-right : 1em;
+#workspaces button.active {
+  color: @tray-icon-active;
 }
-#custom-rofi-powermenus{
-	color : @tray-icon-inactive;
+
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+}
+
+#workspaces button:hover {
+  background: none;
+}
+
+#custom-roundleft {
+  background-color: alpha(@barbackground, 0);
+  font-size: 26px;
+  color: @traybackground;
+}
+
+#custom-roundright {
+  background-color: alpha(@barbackground, 0);
+  font-size: 26px;
+  color: @traybackground;
+}
+
+#spacing-left {
+  padding-left: 1em;
+}
+
+#spacing-right {
+  padding-right: 1em;
+}
+
+#custom-rofi-powermenus {
+  color: @tray-icon-inactive;
 }

@@ -1,119 +1,122 @@
 {
-	"layer": "top",
-	"position": "top",
-	"height": 30,
-	"margin" : 10,
-	//"spacing" : 20,
-	"modules-left" : ["custom/spacing-left",
-		"hyprland/workspaces",
-		"custom/roundright"
-	],
-	"modules-center" : [
-		"custom/roundleft",
-		"clock#1",
-		"custom/sep",
-		"clock#2",
-		"custom/roundright"
-	],
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "margin": 10,
+  //"spacing" : 20,
+  "modules-left": [
+    "custom/spacing-left",
+    "hyprland/workspaces",
+    "custom/roundright",
+  ],
+  "modules-center": [
+    "custom/roundleft",
+    "clock#1",
+    "custom/sep",
+    "clock#2",
+    "custom/roundright",
+  ],
 
-	"modules-right" : [
-		"custom/roundleft",
-		"pulseaudio#output",
-		"pulseaudio#input",
-		"network",
-		"memory",
-		"cpu",
-		"tray",
-		"custom/rofi-powermenus",
-		"custom/spacing-right"
-	],
+  "modules-right": [
+    "custom/roundleft",
+    "custom/change-input",
+    "pulseaudio#output",
+    "pulseaudio#input",
+    "network",
+    "memory",
+    "cpu",
+    "tray",
+    "custom/rofi-powermenus",
+    "custom/spacing-right",
+  ],
 
+  "custom/change-input": {
+    "format": "{}",
+    "interval": 1,
+    "exec": "fcitx5-remote | awk '{print ($0 == \"2\" ? \"日本語\" : \"EN\")}'",
+    "on-click": "/home/dhruv/.config/waybar/toggle-input.sh",
+    "tooltip": true,
+  },
 
-
-
-	"custom/spacing-left" : {
-		"format"  : " ",
-	},
-	"custom/spacing-right" : {
-		"format"  : " ",
-	},
-	"hyprland/workspaces" : {
-		"format" : "{name}:{icon}",
-		"on-click" : "activate",
-		"format-icons" : {
-			"active" : "",
-			"default" : "",
-		},
-		"sort-by-number" : true,
-		"persistent-workspaces" : {
-			"1" : [],
-			"2" : [],
-			"3" : [],
-			"4" : [],
-
-		},
-	},
-	"clock#1" : {
-		"format" : "{:%H:%M}",
-		"on-click" : "gnome-clocks",
-	},
-	"clock#2" : {
-		"format" : "{:%d-%m}",
-		"on-click" : "gnome-calendar",
-	},
-	"custom/sep" :{
-		"format" : "|",
-	},
-	"tray" : {
-		"icon-size" : 20,
-	},
-	"pulseaudio#output":{
-		"on-click" : "pavucontrol",
-		"format": "{icon} {volume:>3}%",
-		"format-muted" : "",
-		"format-icons": {
-			"headphones": "",
-			"default": [
-				"",
-				""
-			]
-		},
-		"scroll-step" : 5,
-		"on-click-right" : "~/dotfiles/.config/waybar/toggle-audio-sink.sh",
-		"tooltip" : true,
-		"tooptip-format" : "{sink_name}"
-	},
-	"pulseaudio#input":{
-		"disable-scroll" : true,
-		"format-source" : "",
-		"format-source-muted" : " ",
-		"format" : "{format_source}",
-		"on-click" : "pactl set-source-mute 62 toggle",
-		"tooltip-format" : "{desc} - {volume}%",
-	},
-	"custom/rofi-powermenus" :{
-		"format" : " ",
-		"on-click" : "/home/dhruv/.config/rofi/powermenu/type-2/powermenu.sh",
-	},
-	"memory": {
-		"interval": 5,
-		"format": "\uefc5 {:>2}%"
-	},
-	"cpu": {
-		"interval": 5,
-		"format": "\uf4bc {usage:>2}%"
-	},
-	"custom/roundright" : {
-		"format" : "",
-	},
-	"custom/roundleft" : {
-		"format" : "",
-	},
-    "network": {
-        "format-wifi" : "wifi {bandwidthDownBits}",
-        "format-ethernet": "\uf6ff{bandwidthDownBytes:>6}",
-        "format-disconnected" : "\uf701",
-        "interval": 5,
-        "tooltip": false,
+  "custom/spacing-left": {
+    "format": " ",
+  },
+  "custom/spacing-right": {
+    "format": " ",
+  },
+  "hyprland/workspaces": {
+    "format": "{name}:{icon}",
+    "on-click": "activate",
+    "format-icons": {
+      "active": "",
+      "default": "",
     },
+    "sort-by-number": true,
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+    },
+  },
+  "clock#1": {
+    "format": "{:%H:%M}",
+    "on-click": "gnome-clocks",
+  },
+  "clock#2": {
+    "format": "{:%d-%m}",
+    "on-click": "gnome-calendar",
+  },
+  "custom/sep": {
+    "format": "|",
+  },
+  "tray": {
+    "icon-size": 20,
+  },
+  "pulseaudio#output": {
+    "on-click": "pavucontrol",
+    "format": "{icon} {volume:>3}%",
+    "format-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "default": ["", ""],
+    },
+    "scroll-step": 5,
+    "on-click-right": "~/dotfiles/.config/waybar/toggle-audio-sink.sh",
+    "tooltip": true,
+    "tooptip-format": "{sink_name}",
+  },
+  "pulseaudio#input": {
+    "disable-scroll": true,
+    "format-source": "",
+    "format-source-muted": " ",
+    "format": "{format_source}",
+    "on-click": "pactl set-source-mute 62 toggle",
+    "tooltip-format": "{desc} - {volume}%",
+  },
+  "custom/rofi-powermenus": {
+    "format": " ",
+    "on-click": "/home/dhruv/.config/rofi/powermenu/type-2/powermenu.sh",
+  },
+  "memory": {
+    "interval": 5,
+    "format": "\uefc5 {:>2}%",
+  },
+  "cpu": {
+    "interval": 5,
+    "format": "\uf4bc {usage:>2}%",
+  },
+  "custom/roundright": {
+    "format": "",
+  },
+  "custom/roundleft": {
+    "format": "",
+  },
+  "network": {
+    "format-wifi": "wifi {bandwidthDownBits}",
+    "format-ethernet": "\uf6ff{bandwidthDownBytes:>6}",
+    "format-disconnected": "\uf701",
+    "interval": 5,
+    "tooltip": false,
+  },
 }
