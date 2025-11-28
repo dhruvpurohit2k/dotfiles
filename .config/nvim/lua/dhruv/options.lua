@@ -4,7 +4,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = "a"
 vim.opt.showmode = false
 vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
+vim.opt.tabstop = 4
 vim.schedule(function()
 	vim.opt.clipboard = "unnamedplus"
 end)

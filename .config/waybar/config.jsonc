@@ -2,23 +2,11 @@
   "layer": "top",
   "position": "top",
   "height": 30,
-  "margin": 10,
-  //"spacing" : 20,
-  "modules-left": [
-    "custom/spacing-left",
-    "hyprland/workspaces",
-    "custom/roundright",
-  ],
-  "modules-center": [
-    "custom/roundleft",
-    "clock#1",
-    "custom/sep",
-    "clock#2",
-    "custom/roundright",
-  ],
+  "padding": 10,
+  "modules-left": ["custom/spacing-left", "hyprland/workspaces"],
+  "modules-center": ["clock#1", "custom/sep", "clock#2"],
 
   "modules-right": [
-    "custom/roundleft",
     "custom/change-input",
     "pulseaudio#output",
     "pulseaudio#input",
@@ -27,7 +15,6 @@
     "cpu",
     "tray",
     "custom/rofi-powermenus",
-    "custom/spacing-right",
   ],
 
   "custom/change-input": {
@@ -45,11 +32,11 @@
     "format": " ",
   },
   "hyprland/workspaces": {
-    "format": "{name}:{icon}",
+    "format": "{name}",
     "on-click": "activate",
     "format-icons": {
-      "active": "",
-      "default": "",
+      // "active": "",
+      // "default": "",
     },
     "sort-by-number": true,
     "persistent-workspaces": {
@@ -114,7 +101,7 @@
   },
   "network": {
     "format-wifi": "wifi {bandwidthDownBits}",
-    "format-ethernet": "\uf6ff{bandwidthDownBytes:>6}",
+    "format-ethernet": "{bandwidthDownBytes:>6}",
     "format-disconnected": "\uf701",
     "interval": 5,
     "tooltip": false,

@@ -1,5 +1,11 @@
 return {
 	"vhyrro/luarocks.nvim",
-	priority = 1000, -- Very high priority is required, luarocks.nvim should run as the first plugin in your config.
-	config = true,
+	priority = 1000, -- High priority to ensure it runs early
+	opts = {
+		rocks = {
+			"fzy", -- Example rock to install
+			"pathlib.nvim ~> 1.0", -- Another example with version constraint
+		},
+		-- luarocks_build_args = { "--with-lua=/my/path" }, -- Optional: extra args for LuaRocks build
+	},
 }

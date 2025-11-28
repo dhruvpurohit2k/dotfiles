@@ -16,14 +16,15 @@ local on_attach = function(_, bufnr)
 
 	vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "[c]ode [a]ction" })
 end
-
-local lspconfig = require("lspconfig")
+-- local lspconfig = require("lspconfig")
+-- local lspconfig = vim.lsp.config()
 local capabilities = require("blink.cmp").get_lsp_capabilities()
 capabilities.offsetEncoding = "utf-16"
-lspconfig.pyright.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.lua_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.cssls.setup({ capabilities = capabilities, on_attach = on_attach })
-lspconfig.clangd.setup({
+vim.lsp.config("*", {
+	capabilities = capabilities,
+	on_attach = on_attach,
+})
+vim.lsp.config("clangd", {
 	on_attach = function(client, bufnr)
 		local buf_set_keymap = vim.api.nvim_buf_set_keymap
 		local opts = { noremap = true, silent = true }
@@ -43,11 +44,7 @@ lspconfig.clangd.setup({
 	end,
 	capabilities = capabilities,
 })
-lspconfig.ts_ls.setup({ capabilities = capabilities, on_attach = on_attach })
-
---jltds setup
-
-lspconfig.jdtls.setup({
+vim.lsp.config("jdtls", {
 	root_dir = require("jdtls.setup").find_root({ ".git", "mvnw", "gradlew", "pom.xml", "build.gradle" }),
 	cmd = {
 		"java",
@@ -55,7 +52,7 @@ lspconfig.jdtls.setup({
 		"-Dosgi.bundles.defaultStartLevel=4",
 		"-Declipse.product=org.eclipse.jdt.ls.core.product",
 		"-Dlog.protocol=true", -- Useful for debugging
-		"-Dlog.level=ALL", -- Useful for debugging
+		"-Dlog.level=ALL",   -- Useful for debugging
 		"-Xmx1G",
 		"--add-modules=ALL-SYSTEM",
 		"--add-opens",
@@ -90,3 +87,6 @@ vim.api.nvim_create_autocmd("BufReadCmd", {
 		require("jdtls").open_classfile(args.match)
 	end,
 })
+vim.lsp.enable("lua_ls", true)
+vim.lsp.enable("ts_ls", true)
+vim.lsp.enable("gopls", true)

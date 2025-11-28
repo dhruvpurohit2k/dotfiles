@@ -2,7 +2,7 @@
 
 # !!! IMPORTANT: Replace these with your actual sink names !!!
 HEADSET_SINK="alsa_output.pci-0000_28_00.4.analog-stereo"
-SPEAKER_SINK="alsa_output.pci-0000_26_00.1.pro-output-3"
+SPEAKER_SINK="alsa_output.pci-0000_26_00.1.hdmi-stereo"
 # Example:
 # HEADSET_SINK="alsa_output.usb-Logitech_G533_Gaming_Headset-00.analog-stereo"
 # SPEAKER_SINK="alsa_output.pci-0000_00_1f.3.analog-stereo"
